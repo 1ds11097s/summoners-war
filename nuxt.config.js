@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -28,7 +29,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' }
+    { src: '~plugins/ga.js', mode: 'client' },
+    'plugins/contentful',
+    'plugins/common'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,7 +44,9 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv',
+    'nuxt-user-agent'
   ],
   /*
   ** Build configuration
@@ -52,5 +57,11 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  env: {
+    // contentful
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
+  },
 }

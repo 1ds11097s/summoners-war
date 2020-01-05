@@ -1,18 +1,50 @@
 <template>
   <v-container>
-    <Header></Header>
-    <MainMenu></MainMenu>
+    <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
+    <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
   </v-container>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
 import MainMenu from '~/components/MainMenu.vue'
+import MainMenuSp from '~/components/MainMenuSp.vue'
+import client from '../plugins/contentful'
 
 export default {
   components: {
-    Header,
-    MainMenu
+    MainMenu,
+    MainMenuSp
+  },
+  data() {
+    return {
+      deviceType: ""
+    }
+  },
+  created () {
+    this.deviceType = this.checkDevice()
+  },
+  async asyncData({ env }) {
+    let posts = []
+    let filterPosts = {"main":[], "other":[]}
+    await client.getEntries({
+      content_type: env.CTF_BLOG_POST_TYPE_ID,
+      order: '-fields.createdAt'
+    }).then(res => (posts = res.items)).catch(console.error)
+    if (posts) {
+      posts.forEach((value) => {
+        const today = new Date(value.fields.createdAt)
+        const year = today.getFullYear()
+        const month = today.getMonth() + 1
+        const day = today.getDate()
+        value.fields.createdAtJpn =  year + '年' + month + '月' + day + '日'
+        if (value.fields.postType == "mainCategory") {
+          filterPosts.main.push(value)
+        } else {
+          filterPosts.other.push(value)
+        }
+      })
+    }
+    return { filterPosts }
   }
 }
 </script>

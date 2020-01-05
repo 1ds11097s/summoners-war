@@ -1,10 +1,31 @@
 <template>
   <v-app>
+    <Header v-if="deviceType==='pc'"></Header>
+    <HeaderSp v-else></HeaderSp>
     <v-content>
-      <nuxt />
+      <nuxt :device="deviceType"/>
     </v-content>
   </v-app>
 </template>
+
+<script>
+import Header from '@/components/Header.vue'
+import HeaderSp from '@/components/HeaderSp.vue'
+export default {
+  components: {
+    Header,
+    HeaderSp
+  },
+  data() {
+    return {
+      deviceType: ""
+    }
+  },
+  created () {
+    this.deviceType = this.checkDevice()
+  }
+}
+</script>
 
 <style>
 html {

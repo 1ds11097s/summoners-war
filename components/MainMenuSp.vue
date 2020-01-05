@@ -1,50 +1,40 @@
 <template>
   <v-layout>
-    <div class="flex-column d-flex justify-center">
-      <div class="font-weight-bold headline mt-4">最新記事</div>
-      <v-row justify="center" align-content="center">
+    <div class="flex-column d-flex justify-center ma-auto">
+      <div class="font-weight-bold headline mt-4 mb-3">最新記事</div>
         <template v-for="(post, i) in categoryData.other">
           <template v-if="post.fields.postType != 'mainCategory' && i < 6">  
-            <Card 
+            <CardSp 
               :key="i" 
               :linkPath="`/articleDetail?id=` + post.fields.id"
               :title="post.fields.title"
               :subTitle="post.fields.content"
               :image="post.fields.thumbnail.fields.file.url"
               :type="post.fields.postType"
-              col="2"
               cardTextHeight="100%"
               :createdAt="post.fields.createdAtJpn">
-            </Card>
+            </CardSp>
           </template>
         </template> 
-      </v-row>
       <div class="font-weight-bold headline mt-4">カテゴリ一覧</div>  
-      <v-row justify="center" align-content="center">
-        <Card 
-          v-for="(post, i) in categoryData.main" 
-          :key="i" 
+        <CardSp
+          v-for="(post, j) in categoryData.main" 
+          :key="j" 
           :linkPath="`/article?type=` + post.fields.category" 
           :title="post.fields.title" 
           :subTitle="post.fields.content"
           :image="post.fields.thumbnail.fields.file.url"
           :type="post.fields.postType"
-          col="4"
           cardTextHeight=""
           :createdAt="post.fields.createdAtJpn">
-        </Card>
-      </v-row>
+        </CardSp>
     </div>    
   </v-layout>
 </template>
 <script>
-import Card from "@/components/Card.vue"
+import CardSp from "@/components/CardSp.vue"
 
 export default {
-  data() {
-    return {
-    };
-  },
   props: {
     categoryData: {
       type: Object,
@@ -52,7 +42,7 @@ export default {
     }
   },
   components: {
-    Card
+    CardSp
   }
 };
 </script>
