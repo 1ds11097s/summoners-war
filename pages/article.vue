@@ -1,24 +1,25 @@
 <template>
   <v-container>
     <v-layout>
-      <v-row v-if="deviceType==='pc'" class="main-menu-background" justify="center" align-content="center">
-        <template v-for="(post, i) in filterPosts">
-          <Card
-            v-if="post.fields.postType == $route.query.type"
-            :key="i"
-            :linkPath="`/articleDetail?id=` + post.fields.id"
-            :title="post.fields.title" 
-            :subTitle="post.fields.content" 
-            :image="post.fields.thumbnail.fields.file.url"
-            :type="post.fields.postType"
-            col="4"
-            cardTextHeight=""
-            :createdAt="post.fields.createdAtJpn"
-          ></Card>
-        </template>
-      </v-row>
-      <div v-else class="flex-column d-flex justify-center ma-auto text-center">
-        <template v-for="(post, i) in filterPosts">
+      <no-ssr>
+        <v-row v-if="deviceType==='pc'" class="main-menu-background" justify="center" align-content="center">
+          <template v-for="(post, i) in filterPosts">
+            <Card
+              v-if="post.fields.postType == $route.query.type"
+              :key="i"
+              :linkPath="`/articleDetail?id=` + post.fields.id"
+              :title="post.fields.title" 
+              :subTitle="post.fields.content" 
+              :image="post.fields.thumbnail.fields.file.url"
+              :type="post.fields.postType"
+              col="4"
+              cardTextHeight=""
+              :createdAt="post.fields.createdAtJpn"
+            ></Card>
+          </template>
+        </v-row>
+        <div v-else class="flex-column d-flex justify-center ma-auto text-center">
+          <template v-for="(post, i) in filterPosts">
             <CardSp
               v-if="post.fields.postType == $route.query.type"
               :key="i" 
@@ -30,8 +31,9 @@
               cardTextHeight=""
               :createdAt="post.fields.createdAtJpn">
             </CardSp>
-        </template>
-      </div>
+          </template>
+        </div>
+      </no-ssr>  
     </v-layout>
     <div class="text-center">
     <v-btn href="/" class="ma-2 text-decoration-none" outlined color="indigo">Topに戻る</v-btn>
