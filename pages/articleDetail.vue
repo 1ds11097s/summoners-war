@@ -1,8 +1,10 @@
 <template>
   <v-container>
     <v-layout>
-      <ArticleDetailWrap v-if="deviceType==='pc'" :contentData="filterPosts"/>
-      <ArticleDetailWrapSp v-else :contentData="filterPosts"/>
+      <no-ssr>
+        <ArticleDetailWrap v-if="deviceType==='pc'" :contentData="filterPosts"/>
+        <ArticleDetailWrapSp v-else :contentData="filterPosts"/>
+      </no-ssr>
     </v-layout>
   </v-container>
 </template>
