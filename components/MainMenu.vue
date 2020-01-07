@@ -41,10 +41,6 @@
 import Card from "@/components/Card.vue"
 
 export default {
-  data() {
-    return {
-    };
-  },
   props: {
     categoryData: {
       type: Object,
