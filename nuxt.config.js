@@ -9,6 +9,7 @@ export default {
     title: 'サマナーズウォーの参考書',
     meta: [
       { charset: 'utf-8' },
+      { name: 'google-site-verification', content: 'uUSQV_621jvohmYULQEgCFTSzPuvp1UX5DD6BgTjKUw' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'サマナーズウォーの攻略や管理人の日記をアップしていくサイトです。文章だけの攻略だと実際にどのように動いているか、どんなルーン構成なのかが分かりにくい部分があるので動画を通して攻略のサポートをします。' }
     ],
