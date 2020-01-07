@@ -1,7 +1,9 @@
 <template>
   <v-container>
-    <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
-    <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
+    <no-ssr>
+      <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
+      <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
+    </no-ssr>
   </v-container>
 </template>
 
