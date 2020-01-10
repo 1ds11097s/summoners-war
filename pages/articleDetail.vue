@@ -1,10 +1,10 @@
 <template>
   <v-container>
     <v-layout>
-      <no-ssr>
+      <client-only placeholder="Loading...">
         <ArticleDetailWrap v-if="deviceType==='pc'" :contentData="filterPosts"/>
         <ArticleDetailWrapSp v-else :contentData="filterPosts"/>
-      </no-ssr>
+      </client-only>
     </v-layout>
   </v-container>
 </template>

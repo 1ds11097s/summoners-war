@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout>
-      <no-ssr>
+      <client-only placeholder="Loading...">
         <v-row v-if="deviceType==='pc'" class="main-menu-background" justify="center" align-content="center">
           <template v-for="(post, i) in filterPosts">
             <Card
@@ -33,7 +33,7 @@
             </CardSp>
           </template>
         </div>
-      </no-ssr>  
+      </client-only>  
     </v-layout>
     <div class="text-center">
     <v-btn href="/" class="ma-2 text-decoration-none" outlined color="indigo">Topに戻る</v-btn>
