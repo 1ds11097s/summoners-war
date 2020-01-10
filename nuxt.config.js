@@ -50,6 +50,9 @@ export default {
     'nuxt-user-agent',
     '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://summoners-war-reference-book.xyz/',
+  },
   /*
   ** Build configuration
   */
