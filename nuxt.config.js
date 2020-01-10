@@ -52,6 +52,7 @@ export default {
   ],
   sitemap: {
     hostname: 'https://summoners-war-reference-book.xyz',
+    path: '/sitemap.xml'
   },
   /*
   ** Build configuration
