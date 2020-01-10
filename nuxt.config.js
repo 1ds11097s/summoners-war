@@ -47,7 +47,8 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
-    'nuxt-user-agent'
+    'nuxt-user-agent',
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Build configuration
