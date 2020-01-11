@@ -35,7 +35,7 @@
     </template>
     <div class="font-weight-bold text-center mt-4 mb-3">カテゴリー一覧</div>
     <template v-for="(post, i) in contentData">
-      <template v-if="post.fields.postType == 'mainCategory'">
+      <template v-if="post.fields.postType == 'mainCategory' && post.fields.status != 2">
         <v-card 
           :key="i"
           class="card-list text-decoration-none"

@@ -3,7 +3,7 @@
     <v-col cols="2">
       <div class="font-weight-bold text-center">カテゴリー一覧</div>
       <template v-for="(post, i) in contentData">
-        <template v-if="post.fields.postType == 'mainCategory'">
+        <template v-if="post.fields.postType == 'mainCategory' && post.fields.status != 2">
           <v-card 
             :key="i"
             class="card-list text-decoration-none"
@@ -38,7 +38,7 @@
     <v-col cols="2">
       <div class="font-weight-bold text-center">最近更新された記事</div>
       <template v-for="(post, i) in contentData">
-        <template v-if="post.fields.postType != 'mainCategory' && i < 6">
+        <template v-if="post.fields.postType != 'mainCategory' && i < 7">
           <v-card 
             :key="i"
             class="card-list text-decoration-none"
