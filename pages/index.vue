@@ -39,7 +39,7 @@ export default {
         const month = today.getMonth() + 1
         const day = today.getDate()
         value.fields.createdAtJpn =  year + '年' + month + '月' + day + '日'
-        if (value.fields.postType == "mainCategory") {
+        if (value.fields.postType == "mainCategory" && value.fields.status != 2) {
           filterPosts.main.push(value)
         } else {
           filterPosts.other.push(value)

@@ -1,6 +1,13 @@
 <template>
   <v-col :cols="col" class="text-center">
-    <v-card :href="linkPath" class="mx-auto text-decoration-none" max-width="400" ripple hover :style="{height:cardTextHeight}">
+    <v-card
+      :href="linkPath" 
+      class="mx-auto text-decoration-none" 
+      max-width="400" 
+      ripple 
+      hover 
+      :style="{height:cardTextHeight}"
+    >
       <v-img
         class="white--text align-end"
         height="200px"

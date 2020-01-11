@@ -29,7 +29,8 @@
               :image="post.fields.thumbnail.fields.file.url"
               :type="post.fields.postType"
               cardTextHeight=""
-              :createdAt="post.fields.createdAtJpn">
+              :createdAt="post.fields.createdAtJpn"
+            >
             </CardSp>
           </template>
         </div>
