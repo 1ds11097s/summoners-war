@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 export default {
   mode: 'universal',
   /*
@@ -50,9 +49,40 @@ export default {
     'nuxt-user-agent',
     '@nuxtjs/sitemap'
   ],
+  
   sitemap: {
+    
     hostname: 'https://summoners-war-reference-book.xyz',
-    path: '/sitemap.xml'
+    path: '/sitemap.xml',
+    exclude: [
+      '/article',
+      '/articleDetail'
+    ],
+    async routes () { // ここで動的ページの出力をする
+      const contentful = require('contentful');
+      const client = contentful.createClient({
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+      });
+      const posts = await client.getEntries({
+        'content_type': process.env.CTF_BLOG_POST_TYPE_ID,
+        order: '-fields.createdAt'
+      });
+  
+      let urls = [];
+      posts.items.forEach((val, idx, arr) => {
+        urls[idx] = 'articledetail/?id=' + String(val.fields.id)
+      });
+      urls.push("article/?type=beginnersTips")
+      urls.push("article/?type=tower")
+      urls.push("article/?type=dialy")
+      urls.push("article/?type=dungeon")
+      urls.push("article/?type=siegeGuildButtle")
+      urls.push("article/?type=worldArena")
+  
+      return urls;
+    }
+    
   },
   /*
   ** Build configuration
