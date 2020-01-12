@@ -8,7 +8,7 @@
             :key="i"
             class="card-list text-decoration-none"
             ripple
-            :href="`/article?type=` + post.fields.category"
+            :href="`/article?type=` + post.fields.category + '&title=' + post.fields.title"
           >
             <v-img
               max-height="180"

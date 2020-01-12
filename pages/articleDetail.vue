@@ -15,7 +15,19 @@ import client from '@/plugins/contentful'
 export default {
   data() {
     return {
-      deviceType: ""
+      deviceType: "",
+      pageInfo: []
+    }
+  },
+  head() {
+    return {
+      title: "サマナーズウォーの参考書 | " + this.pageInfo[0].fields.title,
+      meta: [
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:title', property: 'og:title', content: "サマナーズウォーの参考書 | " + this.pageInfo[0].fields.title },
+        { hid: 'og:url', property: 'og:url', content: 'https://summoners-war-reference-book.xyz/articleDetail?id=' + this.$route.query.id },
+        { hid: 'og:image', property: 'og:image', content: this.pageInfo[0].fields.thumbnail.fields.file.url }
+      ],
     }
   },
   components: {
@@ -24,6 +36,7 @@ export default {
   },
   created () {
     this.deviceType = this.checkDevice()
+    this.pageInfo = this.filterPosts.filter(item => item.fields.id == this.$route.query.id)
   },
   async asyncData({ env }) {
     let posts = []

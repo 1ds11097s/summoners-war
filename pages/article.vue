@@ -50,7 +50,22 @@ export default {
   data() {
     return {
       filterPostData: [],
-      deviceType: ""
+      deviceType: "",
+      meta: {
+        title: "サマナーズウォーの参考書 | " + this.$route.query.title,
+        type: 'article',
+        url: 'https://summoners-war-reference-book.xyz/article?type=' + this.$route.query.type + '&title=' + this.$route.query.title
+      },
+    }
+  },
+  head() {
+    return {
+      title: "サマナーズウォーの参考書 | " + this.$route.query.title,
+      meta: [
+        { hid: 'og:type', property: 'og:type', content: this.meta.type },
+        { hid: 'og:title', property: 'og:title', content: this.meta.title },
+        { hid: 'og:url', property: 'og:url', content: this.meta.url }
+      ],
     }
   },
   created () {

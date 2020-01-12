@@ -83,7 +83,7 @@
         <Card 
           v-for="(post, i) in categoryData.main" 
           :key="i" 
-          :linkPath="`/article?type=` + post.fields.category" 
+          :linkPath="`/article?type=` + post.fields.category + '&title=' + post.fields.title" 
           :title="post.fields.title" 
           :subTitle="post.fields.content"
           :image="post.fields.thumbnail.fields.file.url"
