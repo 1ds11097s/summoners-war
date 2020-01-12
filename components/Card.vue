@@ -36,7 +36,7 @@
   </v-col>
 </template>
 <script>
-import Lazy from "@/assets/image/lazy.png"
+import Lazy from "@/assets/image/minilazy.png"
 export default {
   data() {
     return {
