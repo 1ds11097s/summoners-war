@@ -1,4 +1,31 @@
 require('dotenv').config()
+const domain = process.env.BASE_URL.match(/^https?:\/{2,}(.*?)(?:\/|\?|#|$)/)[1]
+//const ampify = require('~/plugins/ampify')
+// const modifyHtml = (html) => {
+//   // Add amp-custom tag to added CSS
+//   html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+//   // Remove every script tag from generated HTML
+//   html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+//   // Add AMP script before </head>
+//   const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
+//   const ampSocial = '<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>'
+//   html = html.replace('</head>', ampScript + ampSocial + '</head>')
+//   return html
+// }
+// const modifyHtml = (html) => {
+//   console.log("aaa")
+//   // Add amp-custom tag to added CSS
+//   html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+//   // Remove every script tag from generated HTML
+//   html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+//   // Add AMP script before </head>
+//   const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
+//   const ampSocial = '<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>'
+//   html = html.replace('</head>', ampScript + ampSocial + '</head>')
+//   console.log(html)
+//   return html
+// }
+
 export default {
   mode: 'universal',
   /*
@@ -10,7 +37,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'google-site-verification', content: 'uUSQV_621jvohmYULQEgCFTSzPuvp1UX5DD6BgTjKUw' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'サマナーズウォーの攻略や管理人の日記をアップしていくサイトです。文章だけの攻略だと実際にどのように動いているか、どんなルーン構成なのかが分かりにくい部分があるので動画を通して攻略のサポートをします。' }
+      { hid: 'description', name: 'description', content: 'サマナーズウォーの攻略や管理人であるカレーの具のプレイ日記を動画でアップしていくサイトです。ワールドアリーナ、ダンジョン攻略等の動画を日々更新しています。文章だけの攻略だと実際にどのように動いているか、どんなルーン構成なのかが分かりにくい部分があるので動画を通して攻略のサポートをします。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -47,8 +74,19 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
     'nuxt-user-agent',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-adsense', {
+      id: process.env.GA_ADSENSE_ID,
+      pageLevelAds: true,
+      analyticsUacct: process.env.GA_TRACKING_ID, // アナリティクスと連携する場合のみ必要
+      analyticsDomainName: domain                 // アナリティクスと連携する場合のみ必要
+    }],
+    '@nuxtjs/pwa'
   ],
+  manifest: {
+    name: "サマナーズウォーの参考書",
+    lang: 'ja'
+  },
   
   sitemap: {
     
@@ -100,4 +138,27 @@ export default {
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
   },
+  // hooks: {
+  //   // This hook is called before rendering the html to the browser
+  //   // 'render:route': (url, page) => {
+  //   //   page.html = modifyHtml(page.html)
+  //   // }
+
+  // }
+  hooks: {
+    // This hook is called before saving the html to flat file
+    // 'generate:page': (page) => {
+    //   page.html = modifyHtml(page.html)
+    // },
+    // // This hook is called before rendering the html to the browser
+    // 'render:route': (url, page, { req, res }) => {
+    //   page.html = modifyHtml(page.html)
+    // }
+    // 'generate:page': (page) => {
+    //   page.html = modifyHtml(page.html)
+    //  },
+    // 'render:route': (url, page, { req, res }) => {
+    //   page.html = modifyHtml(page.html)
+    // }
+  }
 }
