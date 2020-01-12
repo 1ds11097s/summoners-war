@@ -15,7 +15,7 @@
           <div>召喚士名：カレーの具</div>
           <div>プレイ歴：5年以上</div>
           <div>
-            <a href="https://twitter.com/curry_no_gu_" target="_blank" class="text-decoration-none">
+            <a href="https://twitter.com/curry_no_gu_" rel="noopener" target="_blank" class="text-decoration-none">
               <v-icon left color="#64B5F6">
                 mdi-twitter
               </v-icon>
@@ -24,7 +24,7 @@
             </a>
           </div>
           <div>
-            <a href="https://www.youtube.com/channel/UCfseiLnxW7TFP9QKP7IfQkw/" target="_blank" class="text-decoration-none">
+            <a href="https://www.youtube.com/channel/UCfseiLnxW7TFP9QKP7IfQkw/" rel="noopener" target="_blank" class="text-decoration-none">
               <v-icon left color="#E53935">
                 mdi-youtube
               </v-icon>
