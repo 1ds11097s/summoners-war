@@ -85,7 +85,8 @@ export default {
   ],
   manifest: {
     name: "サマナーズウォーの参考書",
-    lang: 'ja'
+    lang: 'ja',
+    short_name: 'サマ参'
   },
   
   sitemap: {
