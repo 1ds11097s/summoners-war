@@ -5,7 +5,7 @@
   />
 </template>
 <script>
-import HeaderImage from "@/assets/image/summoners-war-header.png";
+import HeaderImage from "@/assets/image/summoners-war-header.png"
 export default {
   data() {
     return {

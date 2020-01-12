@@ -2,7 +2,7 @@
   "name": "summoners-war",
   "version": "1.0.0",
   "description": "My spectacular Nuxt.js project",
-  "author": "大坪 裕二",
+  "author": "カレーの具",
   "private": true,
   "scripts": {
     "dev": "nuxt",
