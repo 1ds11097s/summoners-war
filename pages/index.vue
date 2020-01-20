@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    
-      <MainMenu  :categoryData="filterPosts"></MainMenu>
-      
-    
+    <client-only placeholder="Loading...">
+      <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
+      <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
+    </client-only>
   </v-container>
 </template>
 
