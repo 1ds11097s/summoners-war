@@ -1,5 +1,26 @@
 require('dotenv').config()
 const domain = process.env.BASE_URL.match(/^https?:\/{2,}(.*?)(?:\/|\?|#|$)/)[1]
+//const modifyHtml = (html) => {
+  //html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+  //↓こいつで読み込みが止まる
+  //html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  // Add amp-custom tag to added CSS
+  
+  //html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+  // Remove every script tag from generated HTML
+  //html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  //html = html.replace(/<html/gi, '<html ⚡')
+  // html = html.replace(/<img([^>]*)>/gi, (match, sub) => {
+  //   return `<amp-img ${sub} layout=intrinsic></amp-img>`
+  // })
+  //const ampBoilerplate = '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'
+  // Add AMP script before </head>
+  //const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
+  //const ampSocial = '<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>'
+  //const ampAnalytics = '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
+  //html = html.replace('</head>', ampAnalytics + ampScript + ampBoilerplate + ampSocial + '</head>')
+  //return html
+//}
 export default {
   mode: 'universal',
   /*
@@ -93,6 +114,8 @@ export default {
       urls.push("article/?type=dungeon")
       urls.push("article/?type=siegeGuildButtle")
       urls.push("article/?type=worldArena")
+      urls.push("article/?type=summonersWarRanking")
+      urls.push("article/?type=recommendMonster")
   
       return urls;
     }
@@ -113,5 +136,20 @@ export default {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
-  }
+  },
+  // hooks: {
+  //   'generate:page': (page) => {
+  //     page.html = modifyHtml(page.html)
+  //   },
+  //   // This hook is called before rendering the html to the browser
+  //   'render:route': (url, page, { req, res }) => {
+  //     page.html = modifyHtml(page.html)
+  //   }
+  // },
+  // render: {
+  //   http2: {
+  //       push: true,
+  //       pushAssets: (req, res, publicPath, preloadFiles) => console.log(preloadFiles)
+  //   }
+  // }
 }
