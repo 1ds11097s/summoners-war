@@ -1,20 +1,21 @@
 <template>
   <v-container>
-    
-      <MainMenu :categoryData="filterPosts"></MainMenu>
-      
-    
+    <client-only placeholder="Loading...">
+      <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
+      <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
+    </client-only>
   </v-container>
 </template>
 
 <script>
 import MainMenu from '~/components/MainMenu.vue'
-
+import MainMenuSp from '~/components/MainMenuSp.vue'
 import client from '../plugins/contentful'
 
 export default {
   components: {
-    MainMenu
+    MainMenu,
+    MainMenuSp
   },
   data() {
     return {

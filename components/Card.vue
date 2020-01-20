@@ -12,9 +12,18 @@
         class="white--text align-end"
         height="200px"
         :src="image"
-        
+        :lazy-src="lazy"
       >
-        
+        <template v-slot:placeholder>
+          <v-layout
+            fill-height
+            align-center
+            justify-center
+            ma-0
+          >
+            <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+          </v-layout>
+        </template>
         <v-chip v-if="type!='mainCategory' && !$route.query.type" color="primary" class="ma-2 caption">{{createdAt}}</v-chip>
         <v-card-title v-if="type=='mainCategory'" class="card-title headline font-weight-bold">{{title}}</v-card-title>
       </v-img>
