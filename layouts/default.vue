@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <Header v-if="deviceType==='pc'"></Header>
-    <HeaderSp v-else></HeaderSp>
+    <Header></Header>
+    
     <v-content>
-      <nuxt :device="deviceType"/>
+      <nuxt/>
     </v-content>
   </v-app>
 </template>
@@ -22,7 +22,7 @@ export default {
     }
   },
   created () {
-    this.deviceType = this.checkDevice()
+    //this.deviceType = this.checkDevice()
   }
 }
 </script>
