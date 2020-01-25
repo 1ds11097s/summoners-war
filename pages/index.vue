@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <client-only placeholder="Loading...">
+    
       <MainMenu  :categoryData="filterPosts"></MainMenu>
       
-    </client-only>
+    
   </v-container>
 </template>
 
