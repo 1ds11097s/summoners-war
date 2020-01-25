@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <client-only placeholder="Loading...">
-      <MainMenu v-if="deviceType=='pc'" :categoryData="filterPosts"></MainMenu>
-      <MainMenuSp v-else :categoryData="filterPosts"></MainMenuSp>
+      <MainMenu  :categoryData="filterPosts"></MainMenu>
+      
     </client-only>
   </v-container>
 </template>
@@ -23,7 +23,7 @@ export default {
     }
   },
   created () {
-    this.deviceType = this.checkDevice()
+    //this.deviceType = this.checkDevice()
   },
   async asyncData({ env }) {
     let posts = []
