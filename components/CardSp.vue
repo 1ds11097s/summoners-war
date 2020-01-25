@@ -2,7 +2,7 @@
   <div class="cardItem">
     <v-card :href="linkPath" class="mx-auto text-decoration-none" max-width="380" ripple hover :style="{height:cardTextHeight}">
       <picture>
-        <source type="image/webp" :srcset="image" media="(max-width: 350px)">
+        <source type="image/webp" :srcset="image" media="(max-width: 350px)" />
         <v-img
           class="white--text align-end"
           height="200px"
