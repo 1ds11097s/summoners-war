@@ -25,10 +25,13 @@
           :href="`/articleDetail?id=` + post.fields.id"
           max-width="380"
         >
-          <v-img
-            height="200px"
-            :src="post.fields.thumbnail.fields.file.url"
-          />
+          <picture>
+            <source type="image/webp" :srcset="post.fields.thumbnail.fields.file.url" media="(height: 200px)">
+            <v-img
+              height="200px"
+              :src="post.fields.thumbnail.fields.file.url"
+            />
+          </picture>  
           <v-card-text class="font-weight-bold text-hidden">{{post.fields.title}}</v-card-text>
         </v-card>
       </template>

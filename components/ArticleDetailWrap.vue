@@ -10,11 +10,14 @@
             ripple
             :href="`/article?type=` + post.fields.category + '&title=' + post.fields.title"
           >
-            <v-img
-              max-height="180"
-              max-width="200"
-              :src="post.fields.thumbnail.fields.file.url"
-            />
+            <picture>
+              <source type="image/webp" :srcset="post.fields.thumbnail.fields.file.url" media="(max-width: 200px)">
+              <v-img
+                max-height="180"
+                max-width="200"
+                :src="post.fields.thumbnail.fields.file.url"
+              />
+            </picture>  
             <v-card-text class="font-weight-bold">{{post.fields.title}}</v-card-text>
           </v-card>
         </template>
