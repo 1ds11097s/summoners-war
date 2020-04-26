@@ -2,8 +2,15 @@
   <div class="container">
       <v-row justify="center">
         <v-col cols="12">
-          <v-img :src="title1" class="title-image"/>
-          <adsbygoogle :ad-slot="'3534424590'" />
+          <v-row justify="center">
+            <v-col cols="4" />
+            <v-col cols="4">
+              <v-img :src="title1" class="title-image"/>
+            </v-col>
+            <v-col cols="4">
+              <adsbygoogle :ad-slot="'6160641832'" />
+            </v-col>
+          </v-row>  
         </v-col>
         <v-col cols="12">
           <NewList />
