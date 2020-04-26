@@ -7,7 +7,7 @@
             <v-col cols="4">
               <v-img :src="title1" class="title-image"/>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="4" style="text-align:right">
               <adsbygoogle :ad-slot="'6160641832'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
             </v-col>
           </v-row>  
@@ -16,13 +16,29 @@
           <NewList />
         </v-col>
         <v-col cols="12">
-          <v-img :src="title2" class="title-image"/>
+          <v-row justify="center">
+            <v-col cols="4" />
+            <v-col cols="4">
+              <v-img :src="title2" class="title-image"/>
+            </v-col>
+            <v-col cols="4" style="text-align:right">
+              <adsbygoogle :ad-slot="'6975030057'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
+            </v-col>
+          </v-row>  
         </v-col>
         <v-col cols="12">
           <RecommendList />
         </v-col>
         <v-col cols="12">
-          <v-img :src="title3" class="title-image"/>
+          <v-row justify="center">
+            <v-col cols="4" />
+            <v-col cols="4">
+              <v-img :src="title3" class="title-image"/>
+            </v-col>
+            <v-col cols="4" style="text-align:right">
+              <adsbygoogle :ad-slot="'9142028393'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
+            </v-col>
+          </v-row>  
           <div class="font-weight-bold mt-4">※チャンネルアイコンをクリックするとYoutubeチャンネルに移動します</div>
         </v-col>
         <v-col cols="12">
