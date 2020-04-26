@@ -8,7 +8,7 @@
               <v-img :src="title1" class="title-image"/>
             </v-col>
             <v-col cols="4">
-              <adsbygoogle :ad-slot="'6160641832'" />
+              <adsbygoogle :ad-slot="'6160641832'" style="display:inline-block;width:250px;height:64px"/>
             </v-col>
           </v-row>  
         </v-col>
