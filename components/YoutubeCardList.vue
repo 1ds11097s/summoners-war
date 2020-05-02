@@ -1,6 +1,6 @@
 <template>
-  <v-row>
-    <v-col :cols="col" v-for="(item, i) in items" :key="i">
+  <v-row class="px-2">
+    <v-col :xs="colXs" :sm="colSm" :md="colMd" :lg="colLg" v-for="(item, i) in items" :key="i">
       <v-dialog
         :v-model="`dialog${i}`"
         width="500"
@@ -31,10 +31,22 @@ export default {
       type: Array,
       required: true
     },
-    col: {
+    colXs: {
       type: String,
       required: true
     },
+    colSm: {
+      type: String,
+      required: true
+    },
+    colMd: {
+      type: String,
+      required: true
+    },
+    colLg: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {

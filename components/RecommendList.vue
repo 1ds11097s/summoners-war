@@ -1,5 +1,5 @@
 <template>
-  <YoutubeCardList :items="RecommendItems" col=3 />
+  <YoutubeCardList :items="RecommendItems" colXs=12 colSm=12 colMd=3 colLg=3 />
 </template>
 <script>
 import RecommendItems from '@/assets/recommend.json';

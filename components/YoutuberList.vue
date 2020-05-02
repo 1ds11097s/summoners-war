@@ -1,5 +1,5 @@
 <template>
-  <YoutuberCardList :items="YoutuberItems" col=2 />
+  <YoutuberCardList :items="YoutuberItems" colXs=3 colSm=3 colMd=2 colLg=2 />
 </template>
 <script>
 import YoutuberItems from '@/assets/youtuber.json';
