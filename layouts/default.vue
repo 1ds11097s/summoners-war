@@ -10,11 +10,15 @@ import Header from '~/components/Header.vue'
 export default {
   components: {
     Header
-  }
+  },
 }
 </script>
 
 <style>
+.v-application--wrap {
+  background-image: url("~@/assets/image/background-image.jpg");
+  background-repeat: repeat;
+}
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
