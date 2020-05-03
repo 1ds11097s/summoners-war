@@ -2,7 +2,7 @@
   <v-row class="px-2">
     <v-col cols="4" :cols-sm="colSm" :md="colMd" :lg="colLg" v-for="(item, i) in items" :key="i">
       <v-card hover ripple :href="item.url" target="_blank">
-        <v-img :src="item.thumbnails">
+        <v-img :src="item.thumbnails" class="youtuber-card" style="position:relative">
           <v-card-subtitle :class="getUseClass">{{item.name}}</v-card-subtitle>
         </v-img>
       </v-card>
@@ -47,6 +47,15 @@ export default {
 }
 </script>
 <style lang="scss">
+.youtuber-card::before {
+  content:"";
+  background-image: url("~@/assets/image/pin.png");
+  width:50px;
+  height:50px;
+  position:absolute;
+  left: 50%;
+  background-repeat: no-repeat;
+}
 .v-card {
   .card-name {
     font-weight: bold;
@@ -55,6 +64,8 @@ export default {
     padding: 5px 0;
     background-color: rgba(255,255,255,0.8);
     width: 70%;
+    position: absolute;
+    bottom: 0;
   }
   .card-name-sp {
     font-weight: bold;
@@ -63,6 +74,8 @@ export default {
     padding: 5px 0;
     background-color: rgba(255,255,255,0.8);
     width: 100%;
+    position: absolute;
+    bottom: 0;
   }
 }
 </style>

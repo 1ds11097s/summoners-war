@@ -7,7 +7,7 @@
       >
         <template v-slot:activator="{ on }">
           <v-card hover ripple v-on="on" style="height:100%">
-            <v-img :src="item.thumbnails">
+            <v-img :src="item.thumbnails" class="youtube-card" style="position:relative">
               <v-card-subtitle class="card-name">{{item.name}}</v-card-subtitle>
             </v-img>
             <v-card-subtitle class="font-weight-bold">{{item.title}}</v-card-subtitle>
@@ -68,6 +68,15 @@ export default {
 }
 </script>
 <style lang="scss">
+.youtube-card::before {
+  content:"";
+  background-image: url("~@/assets/image/pin.png");
+  width:50px;
+  height:50px;
+  position:absolute;
+  left: 50%;
+  background-repeat: no-repeat;
+}
 .v-card {
   .card-name {
     font-weight: bold;
