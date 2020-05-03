@@ -15,7 +15,7 @@ export default {
         case 'sm': return HeaderImageSp
         case 'md': return HeaderImage
         case 'lg': return HeaderImage
-        case 'xl': return HeaderImage //a
+        case 'xl': return HeaderImage 
       }
     },
   }
