@@ -50,8 +50,13 @@ export default {
     '@nuxtjs/axios',
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-2823672209200755'
-    }]
+    }],
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://summoners-war-reference-book.xyz/'
+  },
   /*
   ** Build configuration
   */
