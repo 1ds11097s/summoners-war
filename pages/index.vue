@@ -7,7 +7,7 @@
               <v-img :src="title1" class="title-image"/>
             </v-col>
             <v-col cols-xs="12" cols-sm="12" cols-md="4" cols-lg="4" style="text-align:center">
-              <adsbygoogle :ad-slot="'6160641832'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
+              <adsbygoogle :ad-slot="'6160641832'" ad-format="" style="display:inline-block;width:300px;height:64px"/>
             </v-col>
           </v-row>  
         </v-col>
@@ -20,7 +20,7 @@
               <v-img :src="title2" class="title-image"/>
             </v-col>
             <v-col cols-xs="12" cols-sm="12" cols-md="4" cols-lg="4" style="text-align:center">
-              <adsbygoogle :ad-slot="'6975030057'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
+              <adsbygoogle :ad-slot="'6975030057'" ad-format="" style="display:inline-block;width:300px;height:64px"/>
             </v-col>
           </v-row>  
         </v-col>
@@ -33,7 +33,7 @@
               <v-img :src="title3" class="title-image"/>
             </v-col>
             <v-col cols-xs="12" cols-sm="12" cols-md="4" cols-lg="4" style="text-align:center">
-              <adsbygoogle :ad-slot="'9142028393'" ad-format="" style="display:inline-block;width:250px;height:64px"/>
+              <adsbygoogle :ad-slot="'9142028393'" ad-format="" style="display:inline-block;width:300px;height:64px"/>
             </v-col>
           </v-row>  
           <div class="font-weight-bold mt-4">※チャンネルアイコンをクリックするとYoutubeチャンネルに移動します</div>
